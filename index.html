@@ -1,27 +1,63 @@
 <!DOCTYPE html>
 <html><head><style>
-body {background-color:black;margin:0;padding:0;color:white;}
-button {height:20vh;width:100vw;font-size:16vh;background-color: #4CAF50;border: none;color: white;text-align: center;text-decoration: none;display: inline-block;}
+body {background-color:black;margin:0;padding:0;color:white;font-size:5vh;font-family:sans;text-align:center;}
+button {height:20vh;width:100vw;font-size:16vh;background-color: #4CAF50;border:none;color:white;text-align:center;text-decoration:none;display:inline-block;}
 img {width:100%;max-width:100vw;height:100%;max-height:65vh;}
 </style><body>
 <script>
-var images = ["1", "2", "3", "4", "5", "6", "7", "8"];
-var exercisesDone = 0;
-var nextImage = 0;
+var exercises = ["01 maastaveto",
+"02 leuat normaalilla otteella",
+"03 leuat reverse otteella",
+"04 kyykky kässäreillä",
+"05 soutu käsipainolla",
+"06 normaalit punnerrukset kahvoilla",
+"07 kohotetut punnerrukset kahvoilla",
+"08 penkki tangolla",
+"09 penkki käsipainoilla",
+"10 vinopenkki tangolla",
+"11 vinopenkki käsipainoilla",
+"12 ylätalja",
+"13 ylätalja niskan taakse",
+"14 vatsalihakset dipissä",
+"15 vatsalihakset lattialla",
+"16 olankohautukset käsipainoilla",
+"17 soutu leukaan scottitangolla",
+"18 haukat scottitangolla",
+"19 haukat kässäreillä",
+"20 kapea penkki",
+"21 ranskalainen punnerrus otsalta"];
+var workoutLength = 5;
+function shuffle(array) { // by some dude at StackOverflow
+  var currentIndex = array.length, temporaryValue, randomIndex;
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
 function nextExercise() {
- if (exercisesDone > 3) {
+ if (exercises.length == 0) {
   document.getElementById("nextButton").innerHTML='DONE';
   document.getElementById("exerciseDisplay").innerHTML=' ';
+ }
+ else if (exercises.length > workoutLength) {
+  exercises = shuffle(exercises);
+  exercises = exercises.splice(0, workoutLength);
+  exercises = exercises.sort()
+  document.getElementById("nextButton").innerHTML='START';
  } else {
-  nextImage = images[Math.floor(Math.random()*images.length)];
-  images.splice(images.indexOf(nextImage), 1); // we don't want duplicates yo
-  document.getElementById("exerciseDisplay").innerHTML='<img src="a/'+nextImage+'">';
+  document.getElementById("exerciseDisplay").innerHTML=' '+exercises.splice(0, 1)[0].slice(3).toUpperCase()+' ';
   document.getElementById("nextButton").innerHTML='NEXT';
-  exercisesDone++;
  }
 }
 </script>
-<button id="nextButton" onclick="nextExercise()">START</button>
+<button id="nextButton" onclick="nextExercise()">INIT</button>
 <p id="exerciseDisplay"></p>
 </body>
 </html>
