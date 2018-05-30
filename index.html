@@ -38,6 +38,7 @@ var exercises = [
 "03 leuat reverse otteella",
 "04 kyykky kässäreillä",
 "05 soutu käsipainolla",
+"05 ylätalja seisten narukahvoilla",
 "06 normaalit punnerrukset kahvoilla",
 "07 kohotetut punnerrukset kahvoilla",
 "08 penkki tangolla",
@@ -57,7 +58,7 @@ var exercises = [
 "20 kapea penkki",
 "21 ranskalainen punnerrus otsalta"
 ];
-var workoutLength = 5;
+var workoutLength = 4;
 function shuffle(array) { // by some dude at StackOverflow
   var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -76,7 +77,7 @@ function shuffle(array) { // by some dude at StackOverflow
 function nextExercise() {
  if (exercises.length == 0) {
   document.getElementById("nextButton").innerHTML='DONE';
-  document.getElementById("exerciseDisplay").innerHTML=' ';
+  document.getElementById("exerciseDisplay").innerHTML='niska vastusnauhalla';
  }
  else if (exercises.length >
  workoutLength) {
