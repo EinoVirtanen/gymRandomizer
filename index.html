@@ -27,41 +27,38 @@ display:inline-block;
 <body>
 <script>
 var exercises = [
-"01 maastaveto",
-"02 soutu tangolla etukenossa",
-"03 soutu käsipainolla",
-"04 leuat normaalilla otteella",
-"05 leuat reverse otteella",
-"06 ylätalja",
-"07 ylätalja niskan taakse",
-"08 ylätalja seisten narukahvoilla",
-"09 kyykky kässäreillä",
-"10 takareidet jalat tuettuina",
-"11 normaalit punnerrukset kahvoilla",
-"12 kohotetut punnerrukset kahvoilla",
-"13 penkki tangolla",
-"14 vinopenkki tangolla",
-"15 penkki käsipainoilla",
-"16 vinopenkki käsipainoilla",
-"17 pystärit tangolla",
-"18 pystärit kässäreillä",
-"19 olankohautukset käsipainoilla",
-"20 soutu leukaan scottitangolla",
-"21 viparit käsipainoilla",
-"22 haukat scottitangolla",
-"23 haukat kässäreillä",
-"24 kapea penkki",
-"25 ranskalainen punnerrus otsalta",
-"26 kädennostot edestä penkillä etukenossa",
-"27 kädennostot seinää vasten kaikki kosketuspisteet seinällä",
-"28 vatsalihakset dipissä",
-"29 vatsalihakset lattialla",
-"30 leikkitangolla matolla selän pyörittely",
-"31 kepin pyörittely pään yli seisten",
-"32 3-liikkeen ryhtikorjaus",
-"33 niska vastusnauhalla"
+"00 mave",
+"01 kyykky",
+"02 prässi",
+"03 SJMV",
+"04 reiden ojennukset",
+"05 pohkeet",
+"06 pystypunnerrus tanko",
+"07 pystypunnerrus kp",
+"08 kulmasoutu tanko",
+"09 kulmasoutu kp",
+"10 alatalja",
+"11 ylätalja leveä",
+"12 ylätalja kapea",
+"13 penkkipunnerrus tanko",
+"14 penkkipunnerrus kp",
+"15 vinopenkki kp",
+"16 ristitalja",
+"17 peck-deck",
+"18 rinta: viparit maaten",
+"19 vipunostot sivulle",
+"20 vipunostot taakse",
+"21 hauis tangolla",
+"22 hauis kp",
+"23 hauis scott",
+"24 rannekääntö",
+"25 kapea penkki",
+"26 rankalainen punnerrus",
+"27 selkä takareisi penkki",
+"28 kohautukset",
+"29 niska"
 ];
-var workoutLength = 6;
+var workoutLength = 7;
 function shuffle(array) { // by some dude at StackOverflow
   var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -89,7 +86,7 @@ function nextExercise() {
   exercises = exercises.sort()
   document.getElementById("nextButton").innerHTML='START';
  } else {
-  document.getElementById("exerciseDisplay").innerHTML='neg. toist.<br>'+exercises.splice(0, 1)[0].slice(3).toUpperCase()+' ';
+  document.getElementById("exerciseDisplay").innerHTML='neg. toist.<br>1+4 x 6~12<br>'+exercises.splice(0, 1)[0].slice(3).toUpperCase()+' ';
   document.getElementById("nextButton").innerHTML='NEXT';
  }
 }
