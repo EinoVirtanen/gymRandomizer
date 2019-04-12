@@ -16,7 +16,7 @@ button {
 height:20vh;
 width:100vw;
 font-size:16vh;
-background-color: #3399FF;
+background-color: #7f0077;
 border:none;
 color:white;
 text-align:center;
@@ -48,7 +48,7 @@ var exercises = [
   "18 vatsat sivuille",
   "19 rannekääntö"
 ];
-var workoutLength = 7;
+var workoutLength = 6;
 function shuffle(array) { // by some dude at StackOverflow
   var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -76,7 +76,7 @@ function nextExercise() {
   exercises = exercises.sort()
   document.getElementById("nextButton").innerHTML='START';
  } else {
-  document.getElementById("exerciseDisplay").innerHTML='hitaasti tyonto ja superhitaasti palautus<br>1+4 x 6~12<br><br>'+exercises.splice(0, 1)[0].slice(3).toUpperCase()+' ';
+  document.getElementById("exerciseDisplay").innerHTML='1+3 x 20<br><br>'+exercises.splice(0, 1)[0].slice(3).toUpperCase()+' ';
   document.getElementById("nextButton").innerHTML='NEXT';
  }
 }
